@@ -17,6 +17,8 @@
         {{ item.value.owner|default(omit) }}
       }
   with_dict: "{{ logfile }}"
+  register: logrotate_conf
 
 - name: logrotate daemon should be reloaded
   shell: "logrotate -f /etc/logrotate.conf >/dev/null 2>1&"
+  when: logrotate_conf != ""
