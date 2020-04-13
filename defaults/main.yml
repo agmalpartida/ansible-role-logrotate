@@ -1,0 +1,22 @@
+---
+
+# logrotate
+logfile:
+  one:
+    name: "example1"
+    path: "/var/log/example1.log"
+    compress: "compress"
+    notify: "notifempty"
+    missing: "missingok"
+    size: "size 10k"
+    daily: "daily"
+    owner: "create 0644 root root"
+  two:
+    name: "example2"
+    path: "/var/log/example2.log"
+    compress: "compress"
+    notify: "notifempty"
+    missing: "missingok"
+    size: "size 10k"
+    daily: "daily"
+    owner: "create 0644 root root"

@@ -1,0 +1,22 @@
+---
+- name: Install logrotate
+  package:
+    name: logrotate
+    state: present
+
+- name: we will create logrotate files
+  copy:
+    dest: "/etc/logrotate.d/{{ item.value.name }}"
+    content: |
+      {{ item.value.path }} {
+        {{ item.value.compress }}
+        {{ item.value.notify }}
+        {{ item.value.missing }}
+        {{ item.value.size }}
+        {{ item.value.daily }}
+        {{ item.value.owner|default(omit) }}
+      }
+  with_dict: "{{ logfile }}"
+
+- name: logrotate daemon should be reloaded
+  shell: "logrotate -f /etc/logrotate.conf >/dev/null 2>1&"
