@@ -4,7 +4,7 @@ services: docker
 
 env:
   global:
-    - ROLE_NAME: logrotate
+    - ROLE_NAME: ansible-role-logrotate
   matrix:
     - MOLECULE_DISTRO: centos8
     - MOLECULE_DISTRO: centos7
