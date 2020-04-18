@@ -1,6 +1,6 @@
 # Ansible Role: Logrotate
 
-[![Build Status](https://api.travis-ci.com/agmalpartida/logrotate.svg?branch=master)](https://travis-ci.com/github/agmalpartida/logrotate)
+[![Build Status](https://api.travis-ci.com/agmalpartida/ansible-role-logrotate.svg?branch=master)](https://travis-ci.com/github/agmalpartida/ansible-role-logrotate)
 
 This role will deal with the setup of __Logrotate__.
 
